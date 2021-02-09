@@ -1,0 +1,8 @@
+! INCLUDE THEME !
+#include ".Xresources.d/themes/base16-one-dark"
+
+! INCLUDE POLYBAR !
+#include ".Xresources.d/polybar"
+
+! INCLUDE DWM !
+#include ".Xresources.d/dwm"
