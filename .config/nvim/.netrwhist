@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/viggo'
+let g:netrw_dirhist_7='/home/viggo/Downloads/dwm'
+let g:netrw_dirhist_6='/home/viggo/Documents/dev/p5js/test'
+let g:netrw_dirhist_5='/home/viggo/.config/nvim/plug-config'
+let g:netrw_dirhist_4='/home/viggo/Documents/dev/p5js/test'
+let g:netrw_dirhist_3='/home/viggo/.config/nvim/vim-plug'
+let g:netrw_dirhist_2='/home/viggo/Documents/repos/homepage'
+let g:netrw_dirhist_1='/home/viggo/Documents/dev/p5js/test'
