@@ -123,8 +123,8 @@ static Key keys[] = {
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } }, */
-	{ MODKEY,                       XK_z,      incrogaps,      {.i = +3 } },
-	{ MODKEY,                       XK_x,      incrogaps,      {.i = -3 } },
+	{ MODKEY,                       XK_z,      incrgaps,      {.i = +3 } },
+	{ MODKEY,                       XK_x,      incrgaps,      {.i = -3 } },
 	/* { MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } }, */
@@ -155,7 +155,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,							XK_BackSpace,	spawn,			 SHCMD("betterlockscreen -l blur -t 'Go away'") },
-	{ MODKEY,												XK_F11,			spawn,				 SHCMD("mpv --no-cache --no-osc --fps=30 --untimed --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam /dev/video0") },
+	{ MODKEY,												XK_F11,			spawn,				 SHCMD("mpv --no-cache --no-osc --fps=30 --untimed --vf=hflip --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam /dev/video0") },
+	{ MODKEY|ShiftMask,							XK_e,			  spawn,			 	 SHCMD("pcmanfm") },
 
 /*	{ 0,														XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") }, */
 	{ 0,										XK_Print,	spawn,		SHCMD("~/.local/bin/maimpick") },
@@ -176,6 +177,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer -i 3") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer -d 3") },
+	{ 0, XF86XK_AudioMicMute,		spawn,		SHCMD("pamixer --default-source -t") },
 
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("light -A 10") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("light -U 10") },
