@@ -35,7 +35,18 @@ set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 colorscheme nord
 set termguicolors
+setlocal spell
+set spelllang=da
+set spell!
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 "set autochdir                           " Your working directory will always be the same as your working directory
+
+" " Enable true color
+" if exists('+termguicolors')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 

@@ -34,4 +34,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes'
     " fzf integration for faster file navigation
     Plug 'junegunn/fzf.vim'
+    " Vimtex plugin for LaTeX support
+    Plug 'lervag/vimtex'    
+    " Extensive conceal support for LaTeX documents (conceal = math symbols)
+    Plug 'PietroPate/vim-tex-conceal'
+    " Plugin for snippets
+    Plug 'sirver/ultisnips'    
+    " GoYo for zen mode
+    Plug 'junegunn/goyo.vim'   
 call plug#end()

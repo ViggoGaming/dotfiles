@@ -19,9 +19,19 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-# vi mode
+# # vi mode
 bindkey -v
 export KEYTIMEOUT=1
+
+# Yank to the system clipboard
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | xclip -selection c
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
+bindkey -v '^?' backward-delete-char
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
@@ -46,10 +56,19 @@ bindkey '^e' edit-command-line
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 bindkey '^R' history-incremental-search-backward
 
+# Fix delete key
+bindkey "\e[3~" delete-char
+
 # Alias
 alias vim="nvim"
 alias cpy="xclip -selection c"
 alias history="history 1 | cut -c 8- | sort | uniq | fzf | tr '\\n' ' ' | cpy "
+alias ls="ls --color --group-directories-first"
+
+# Fix tmux vim
+alias tmux="TERM=screen-256color-bce tmux"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+

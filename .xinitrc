@@ -36,5 +36,8 @@ picom --experimental-backends &
 # Launch ssh-agent to use ssh with a key passphrase
 ssh-agent zsh &
 
+# Fix ghidra java application in dwm
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Launch windows manager (dwm)
 exec dwm

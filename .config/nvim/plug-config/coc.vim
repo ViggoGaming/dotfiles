@@ -208,3 +208,5 @@ augroup MyCocExplorer
   autocmd VimEnter * sil! au! FileExplorer *
   autocmd BufEnter * let d = expand('%') | if isdirectory(d) | silent! bd | exe 'CocCommand explorer ' . d | endif
 augroup END
+
+let g:python3_host_prog = expand("/usr/bin/python") 
